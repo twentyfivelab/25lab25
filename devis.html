@@ -3,52 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Devis | Audit gratuit, création de site professionnel et visibilité SEO | 25 Lab.</title>
+    <title>Devis | Création de site internet, refonte et identité visuelle | 25 Lab.</title>
     <meta
       name="description"
-      content="Demandez un devis 25 Lab. pour un site vitrine, un site one page, un site e-commerce, une refonte, un audit gratuit, du SEO ou une optimisation digitale."
+      content="Demandez un devis à 25 Lab. pour un site one page, un site vitrine professionnel, un site e-commerce, une refonte site internet, une optimisation SEO ou une identité visuelle."
     />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#171821" />
     <link rel="canonical" href="https://25lab.fr/devis.html" />
-    <meta name="theme-color" content="#17181d" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="25 Lab." />
-    <meta property="og:title" content="Devis | Audit gratuit, création de site professionnel et visibilité SEO" />
-    <meta
-      property="og:description"
-      content="Expliquez votre besoin et recevez un cadre clair pour un site web professionnel, une refonte, un audit gratuit ou une optimisation digitale."
-    />
-    <meta property="og:url" content="https://25lab.fr/devis.html" />
-    <meta property="og:image" content="https://25lab.fr/og-image.svg" />
-    <meta property="og:image:alt" content="25 Lab. — demande de devis" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Devis | Audit gratuit, création de site professionnel et visibilité SEO" />
-    <meta
-      name="twitter:description"
-      content="Parlez de votre projet à 25 Lab. et demandez un devis clair, rassurant et pensé pour cadrer la bonne solution."
-    />
-    <meta name="twitter:image" content="https://25lab.fr/og-image.svg" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
       rel="stylesheet"
     />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="25 Lab." />
+    <meta
+      property="og:title"
+      content="Devis | Création de site internet, refonte et identité visuelle"
+    />
+    <meta
+      property="og:description"
+      content="Expliquez votre besoin en quelques mots et recevez une première orientation claire pour votre site internet ou votre identité visuelle."
+    />
+    <meta property="og:url" content="https://25lab.fr/devis.html" />
+    <meta property="og:image" content="https://25lab.fr/og-image.svg" />
+    <meta property="og:image:alt" content="Demande de devis 25 Lab." />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Devis | Création de site internet, refonte et identité visuelle"
+    />
+    <meta
+      name="twitter:description"
+      content="Une demande simple pour lancer un projet de site web clair, professionnel et cohérent."
+    />
+    <meta name="twitter:image" content="https://25lab.fr/og-image.svg" />
+    <meta name="twitter:image:alt" content="Demande de devis 25 Lab." />
     <link rel="stylesheet" href="style.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "ProfessionalService",
+            "@id": "https://25lab.fr/#agency",
+            "name": "25 Lab.",
+            "url": "https://25lab.fr/",
+            "logo": "https://25lab.fr/logo.svg"
+          },
+          {
             "@type": "WebPage",
-            "name": "Devis",
+            "@id": "https://25lab.fr/devis.html#webpage",
             "url": "https://25lab.fr/devis.html",
-            "description": "Demande de devis 25 Lab. pour la création de site internet, la refonte, l'audit gratuit et l'optimisation digitale."
+            "name": "Devis",
+            "description": "Formulaire de devis 25 Lab. pour la création site web, la refonte site internet, la maintenance site internet et l'identité visuelle.",
+            "isPartOf": {
+              "@id": "https://25lab.fr/#website"
+            },
+            "about": {
+              "@id": "https://25lab.fr/#agency"
+            },
+            "inLanguage": "fr-FR"
           },
           {
             "@type": "BreadcrumbList",
+            "@id": "https://25lab.fr/devis.html#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -72,11 +101,17 @@
     <a class="skip-link" href="#main-content">Aller au contenu</a>
 
     <header class="site-header">
-      <div class="container nav-bar">
-        <a class="brand" href="index.html" aria-label="25 Lab. — Retour à l'accueil">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="25 Lab. - Retour à l'accueil">
           <img src="logo.svg" alt="25 Lab." width="430" height="100" />
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Ouvrir le menu"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -87,298 +122,115 @@
           <a href="temoignages.html">Témoignages</a>
           <a class="is-active" aria-current="page" href="devis.html">Devis</a>
           <a href="contact.html">Contact</a>
-          <div class="nav-utilities" role="group" aria-label="Actions rapides">
-            <a class="nav-utility-link" href="#audit-gratuit">Audit gratuit</a>
-            <a class="nav-utility-link" href="#formulaire-devis">Devis gratuit</a>
-          </div>
+          <a class="btn btn-primary btn-small nav-cta" href="devis.html">Demander un devis</a>
         </nav>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="section page-hero">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
+      <section class="page-hero">
+        <div class="container page-hero-grid">
+          <div class="page-hero-copy reveal">
             <p class="eyebrow">Demande de devis</p>
-            <h1>Un cadre clair pour lancer un site plus fort, plus lisible et plus crédible.</h1>
-            <p class="lede">
-              Si vous avez besoin d'un site vitrine, d'un site one page, d'un site e-commerce, d'une
-              refonte, d'un meilleur référencement SEO ou d'une optimisation digitale, ce formulaire
-              nous aide à vous répondre de façon utile et structurée.
+            <h1>Un premier cadre clair pour votre projet de site ou d'identité visuelle.</h1>
+            <p class="lead">
+              Chaque projet commence par une demande simple. Expliquez-nous votre besoin en quelques mots, nous reviendrons vers vous avec une première orientation claire.
             </p>
-            <div class="button-row">
-              <a class="btn btn-primary" href="#formulaire-devis">Obtenir mon devis</a>
-              <a class="btn btn-secondary" href="#audit-gratuit">Voir ce que nous analysons</a>
-            </div>
           </div>
-          <aside class="page-hero-card reveal delay-1">
-            <p class="eyebrow">Ce que vous recevez</p>
-            <ul>
-              <li>Une lecture claire du bon format de site à privilégier.</li>
-              <li>Un regard utile sur la visibilité, la structure et le message.</li>
-              <li>Un premier cadre pour avancer sans perdre de temps.</li>
-            </ul>
+          <aside class="hero-panel hero-panel-compact reveal">
+            <p class="panel-label">Ce que nous regardons</p>
+            <h2>Structure, image, visibilité, contact.</h2>
+            <p>
+              L'objectif n'est pas de multiplier les options. Il s'agit d'identifier la solution la plus utile pour rendre votre site plus lisible, plus crédible et plus efficace.
+            </p>
           </aside>
         </div>
       </section>
 
       <section class="section">
         <div class="container form-layout">
-          <aside class="side-panel sticky-panel reveal">
-            <p class="eyebrow">Pourquoi demander un devis</p>
-            <h2>Le devis est là pour cadrer la bonne réponse, pas pour empiler des options inutiles.</h2>
-            <p class="lede">
-              Nous regardons d'abord ce qu'il faut clarifier, créer ou refondre pour que le site soit
-              plus crédible, plus cohérent et plus utile commercialement.
-            </p>
-            <ul class="info-list">
-              <li>
-                <strong>Audit gratuit possible</strong>
-                <span>Si un site existe déjà, nous pouvons analyser ce qui freine la visibilité, la conversion ou la lisibilité.</span>
-              </li>
-              <li>
-                <strong>Premier retour rapide</strong>
-                <span>Vous recevez un retour initial clair pour comprendre la meilleure direction à prendre.</span>
-              </li>
-              <li>
-                <strong>Zone d'intervention</strong>
-                <span>Europe, Suisse, France, UK, accompagnement à distance.</span>
-              </li>
+          <aside class="side-card reveal">
+            <p class="eyebrow">Pourquoi ce formulaire</p>
+            <h2>Une base simple pour vous répondre proprement.</h2>
+            <ul class="check-list">
+              <li>Comprendre votre activité et votre besoin</li>
+              <li>Identifier le bon type de projet</li>
+              <li>Préparer un premier retour clair et utile</li>
             </ul>
+            <p class="side-note">
+              L'adresse e-mail de destination et le contact WhatsApp peuvent être modifiés facilement plus tard si besoin.
+            </p>
           </aside>
 
-          <article class="form-panel reveal delay-1" id="formulaire-devis">
-            <p class="eyebrow">Votre projet</p>
-            <h2>Décrivez votre besoin en quelques informations bien choisies.</h2>
-            <p class="lede">
-              Plus le contexte est clair, plus le retour sera précis. Si certains points restent à
-              définir, ce n'est pas bloquant : nous pourrons les cadrer ensemble.
-            </p>
-
-            <!-- Pour connecter Formspree, Netlify Forms ou un email handler, remplacez action="#"
-                 par votre endpoint et adaptez ou retirez l'interception JS du fichier script.js. -->
-            <form action="#" method="post" novalidate data-form="quote">
-              <div class="field-grid two">
+          <article class="form-card reveal">
+            <form
+              action="mailto:contact@25lab.fr"
+              method="post"
+              enctype="text/plain"
+              novalidate
+              data-mailto-form
+            >
+              <div class="field-grid">
                 <label class="field">
                   <span>Nom</span>
-                  <input type="text" name="name" placeholder="Votre nom" aria-invalid="false" data-required />
+                  <input type="text" name="nom" autocomplete="family-name" required data-required />
                   <small></small>
                 </label>
                 <label class="field">
-                  <span>Entreprise</span>
-                  <input type="text" name="company" placeholder="Nom de votre entreprise" aria-invalid="false" data-required />
-                  <small></small>
-                </label>
-              </div>
-
-              <div class="field-grid two">
-                <label class="field">
-                  <span>E-mail</span>
-                  <input type="email" name="email" placeholder="vous@entreprise.fr" aria-invalid="false" data-required />
-                  <small></small>
-                </label>
-                <label class="field">
-                  <span>Téléphone</span>
-                  <input type="tel" name="phone" placeholder="06 00 00 00 00" aria-invalid="false" data-required />
-                  <small></small>
-                </label>
-              </div>
-
-              <div class="field-grid two">
-                <label class="field">
-                  <span>Type de projet</span>
-                  <select name="project_type" aria-invalid="false" data-required>
-                    <option value="">Sélectionnez une option</option>
-                    <option>Site one page</option>
-                    <option>Site vitrine</option>
-                    <option>Site e-commerce</option>
-                    <option>Refonte de site</option>
-                    <option>SEO / visibilité en ligne</option>
-                    <option>Google Business Profile</option>
-                    <option>Maintenance / SAV / suivi</option>
-                    <option>IA / optimisation digitale</option>
-                  </select>
-                  <small></small>
-                </label>
-                <label class="field">
-                  <span>Budget</span>
-                  <select name="budget" aria-invalid="false" data-required>
-                    <option value="">Sélectionnez une tranche</option>
-                    <option>Moins de 1 500 EUR</option>
-                    <option>1 500 EUR - 3 000 EUR</option>
-                    <option>3 000 EUR - 6 000 EUR</option>
-                    <option>6 000 EUR et plus</option>
-                    <option>À définir ensemble</option>
-                  </select>
+                  <span>Prénom</span>
+                  <input type="text" name="prenom" autocomplete="given-name" required data-required />
                   <small></small>
                 </label>
               </div>
 
               <label class="field">
-                <span>Délai souhaité</span>
-                <select name="timeline" aria-invalid="false" data-required>
-                  <option value="">Sélectionnez un délai</option>
-                  <option>Dès que possible</option>
-                  <option>Sous 2 à 4 semaines</option>
-                  <option>Sous 1 à 2 mois</option>
-                  <option>Calendrier flexible</option>
+                <span>Nom de la société, si existante</span>
+                <input type="text" name="societe" autocomplete="organization" />
+                <small></small>
+              </label>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>Adresse e-mail</span>
+                  <input type="email" name="email" autocomplete="email" required data-required />
+                  <small></small>
+                </label>
+                <label class="field">
+                  <span>Numéro de téléphone facultatif</span>
+                  <input type="tel" name="telephone" autocomplete="tel" data-optional-validate />
+                  <small></small>
+                </label>
+              </div>
+
+              <label class="field">
+                <span>Type de projet souhaité</span>
+                <select name="type_projet" required data-required>
+                  <option value="">Sélectionnez une option</option>
+                  <option>Site one page</option>
+                  <option>Site vitrine</option>
+                  <option>Site e-commerce</option>
+                  <option>Optimisation / maintenance</option>
+                  <option>Logo &amp; brand identity</option>
+                  <option>Refonte de site existant</option>
                 </select>
                 <small></small>
               </label>
 
               <label class="field">
-                <span>Message</span>
-                <textarea
-                  name="message"
-                  placeholder="Expliquez votre activité, votre objectif, ce qui existe déjà et ce que vous souhaitez améliorer."
-                  aria-invalid="false"
-                  data-required
-                ></textarea>
+                <span>Décrivez votre demande en quelques mots</span>
+                <textarea name="demande" rows="7" required data-required></textarea>
                 <small></small>
               </label>
 
               <div class="form-actions">
-                <button class="btn btn-primary" type="submit">Demander mon devis</button>
+                <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
                 <p class="form-note">
-                  Si vous hésitez entre plusieurs formats, l'audit gratuit permet de choisir une
-                  direction plus juste avant de chiffrer plus finement.
+                  L'envoi ouvre votre messagerie avec votre demande préremplie, pour rester compatible avec GitHub Pages sans service externe.
                 </p>
               </div>
+              <p class="form-status" aria-live="polite" data-form-status></p>
             </form>
-
-            <div class="success-message" role="status" aria-live="polite">
-              <strong>Votre demande a bien été prise en compte.</strong>
-              <span>Le formulaire est prêt à être connecté à votre solution d'envoi.</span>
-            </div>
           </article>
-        </div>
-      </section>
-
-      <section class="section section-soft" id="audit-gratuit">
-        <div class="container">
-          <div class="section-head center reveal">
-            <p class="eyebrow">Audit gratuit</p>
-            <h2>Avant de recommander une solution, nous regardons ce qui bloque vraiment.</h2>
-          </div>
-          <div class="service-detail-grid">
-            <article class="card tone-pink reveal">
-              <h3>Visibilité</h3>
-              <p>Comment votre activité apparaît aujourd'hui et si elle se comprend rapidement.</p>
-            </article>
-            <article class="card tone-blue reveal delay-1">
-              <h3>Structure</h3>
-              <p>La logique des pages, des sections, des priorités et des appels à l'action.</p>
-            </article>
-            <article class="card tone-green reveal">
-              <h3>Référencement SEO</h3>
-              <p>Les bases techniques et éditoriales qui influencent votre visibilité dans Google.</p>
-            </article>
-            <article class="card tone-orange reveal delay-1">
-              <h3>Design</h3>
-              <p>La perception de qualité, la cohérence visuelle et la capacité du site à rassurer.</p>
-            </article>
-            <article class="card tone-yellow reveal">
-              <h3>Clarté du message</h3>
-              <p>Ce que le visiteur comprend immédiatement et ce qui reste encore flou ou trop faible.</p>
-            </article>
-            <article class="card tone-lilac reveal delay-1">
-              <h3>Présence Google</h3>
-              <p>La cohérence entre votre site, votre fiche Google Business Profile et votre zone d'intervention.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Comment nous avançons</p>
-            <h2>Un devis sérieux s'appuie sur un processus simple, lisible et sans friction.</h2>
-          </div>
-          <div class="method-grid">
-            <article class="method-card tone-pink reveal">
-              <strong>01</strong>
-              <h3>Lecture du besoin</h3>
-              <p>Nous regardons le contexte, l'objectif, le niveau d'urgence et le type de présence en ligne à construire.</p>
-            </article>
-            <article class="method-card tone-blue reveal delay-1">
-              <strong>02</strong>
-              <h3>Recommandation claire</h3>
-              <p>Nous identifions le bon format de site et les priorités de design, de SEO et de conversion.</p>
-            </article>
-            <article class="method-card tone-green reveal">
-              <strong>03</strong>
-              <h3>Proposition adaptée</h3>
-              <p>Le devis est construit autour d'un besoin réel, pas autour d'une accumulation de prestations inutiles.</p>
-            </article>
-            <article class="method-card tone-lilac reveal delay-1">
-              <strong>04</strong>
-              <h3>Lancement du projet</h3>
-              <p>Une fois le cadre validé, nous lançons la création avec une direction plus nette et plus efficace.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-deep">
-        <div class="container">
-          <div class="section-head center reveal">
-            <p class="eyebrow">FAQ</p>
-            <h2>Les questions qui reviennent le plus avant une demande de devis.</h2>
-          </div>
-          <div class="faq-list">
-            <article class="faq-item reveal">
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>Peut-on demander seulement un audit gratuit ?</span>
-                <span>+</span>
-              </button>
-              <div class="faq-answer" hidden>
-                <p>
-                  Oui. Si vous avez déjà un site, l'audit gratuit peut suffire pour identifier les
-                  priorités avant de parler d'une refonte, d'un SEO plus poussé ou d'un suivi.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal delay-1">
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>Faut-il avoir un brief très précis avant de vous contacter ?</span>
-                <span>+</span>
-              </button>
-              <div class="faq-answer" hidden>
-                <p>
-                  Non. Vous pouvez simplement nous décrire votre activité, ce qui existe déjà et ce
-                  que vous souhaitez améliorer. Nous vous aiderons à structurer le besoin.
-                </p>
-              </div>
-            </article>
-            <article class="faq-item reveal">
-              <button class="faq-question" type="button" aria-expanded="false">
-                <span>Le devis inclut-il aussi la maintenance et le suivi ?</span>
-                <span>+</span>
-              </button>
-              <div class="faq-answer" hidden>
-                <p>
-                  Oui, si cela est pertinent pour votre projet. Nous pouvons intégrer maintenance,
-                  SAV, suivi et optimisation continue dès le départ ou les prévoir ensuite.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container cta-banner reveal">
-          <p class="eyebrow">Besoin d'un premier échange</p>
-          <h2>Si vous préférez un premier contact avant le devis, la page contact reste ouverte.</h2>
-          <p>
-            Nous pouvons commencer par un message simple, puis cadrer ensemble l'audit gratuit, le
-            bon type de site et la meilleure manière d'améliorer votre présence en ligne.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="contact.html">Parler de mon projet</a>
-            <a class="btn btn-secondary" href="creations.html">Voir les services</a>
-          </div>
         </div>
       </section>
     </main>
@@ -386,19 +238,12 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="25 Lab. — Retour à l'accueil">
+          <a class="brand brand-footer" href="index.html" aria-label="25 Lab. - Retour à l'accueil">
             <img src="logo-light.svg" alt="25 Lab." width="430" height="100" />
           </a>
           <p>
-            25 Lab. crée des sites web premium pour améliorer la présence en ligne, travailler la
-            crédibilité et convertir plus proprement les visiteurs en clients.
+            25 Lab. crée des sites internet professionnels et des identités visuelles cohérentes pour renforcer la visibilité en ligne, la crédibilité et la prise de contact.
           </p>
-          <p>Europe, Suisse, France, UK, accompagnement à distance.</p>
-          <!-- Remplacez ces liens par vos vraies URLs Instagram et WhatsApp avant publication. -->
-          <div class="footer-socials">
-            <a href="https://wa.me/000000000000" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="https://www.instagram.com/25lab" target="_blank" rel="noreferrer">Instagram</a>
-          </div>
         </div>
         <div class="footer-column">
           <p class="footer-title">Navigation</p>
@@ -409,25 +254,24 @@
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-column">
-          <p class="footer-title">Services</p>
-          <a href="creations.html#one-page">Site one page</a>
+          <p class="footer-title">Solutions</p>
+          <a href="creations.html#site-one-page">Site one page</a>
           <a href="creations.html#site-vitrine">Site vitrine</a>
-          <a href="creations.html#e-commerce">Site e-commerce</a>
-          <a href="creations.html#seo">Référencement SEO</a>
-          <a href="creations.html#maintenance">Maintenance</a>
+          <a href="creations.html#site-e-commerce">Site e-commerce</a>
+          <a href="creations.html#optimisation-maintenance">Optimisation / maintenance</a>
+          <a href="creations.html#logo-brand-identity">Logo &amp; brand identity</a>
         </div>
         <div class="footer-column">
           <p class="footer-title">Contact</p>
-          <!-- Remplacez cette adresse e-mail avant la mise en ligne. -->
           <a href="mailto:contact@25lab.fr">contact@25lab.fr</a>
-          <a href="devis.html">Demander un audit gratuit</a>
-          <a href="contact.html">Parler de votre projet</a>
-          <span>Audit gratuit, création de site professionnel, SEO et optimisation digitale.</span>
+          <a href="https://wa.me/330000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="contact.html">Nous contacter</a>
         </div>
       </div>
       <div class="container footer-bottom">
         <p>&copy; <span data-current-year></span> 25 Lab. Tous droits réservés.</p>
-        <p>Un devis clair pour un site plus fort, plus utile et plus crédible.</p>
+        <p>Un site pensé par vous, pour vous, avec une vraie stratégie de visibilité.</p>
       </div>
     </footer>
 
