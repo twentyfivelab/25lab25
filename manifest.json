@@ -1,12 +1,13 @@
 {
   "name": "25 Lab.",
   "short_name": "25 Lab.",
-  "description": "Agence digitale pour la création de site internet, le SEO, Google Business Profile et l'optimisation digitale.",
-  "start_url": "./",
-  "scope": "./",
+  "description": "Agence web française pour la création de site internet, l'identité visuelle, l'optimisation SEO et la présence digitale.",
+  "lang": "fr-FR",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#fbfaf7",
-  "theme_color": "#17181d",
+  "background_color": "#fcfbff",
+  "theme_color": "#171821",
   "icons": [
     {
       "src": "favicon.svg",
