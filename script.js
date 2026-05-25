@@ -18,17 +18,17 @@
 
   function setCurrentYear() {
     doc.querySelectorAll("[data-current-year]").forEach((node) => {
-      node.textContent = new Date().getFullYear().toString();
+      node.textContent = String(new Date().getFullYear());
     });
   }
 
   function initHeaderState() {
-    const updateHeader = () => {
-      doc.body.classList.toggle("is-scrolled", win.scrollY > 14);
+    const update = () => {
+      doc.body.classList.toggle("is-scrolled", win.scrollY > 10);
     };
 
-    updateHeader();
-    win.addEventListener("scroll", updateHeader, { passive: true });
+    update();
+    win.addEventListener("scroll", update, { passive: true });
   }
 
   function initNav() {
@@ -56,6 +56,12 @@
       link.addEventListener("click", closeNav);
     });
 
+    doc.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeNav();
+      }
+    });
+
     doc.addEventListener("click", (event) => {
       if (
         toggle.getAttribute("aria-expanded") !== "true" ||
@@ -69,7 +75,7 @@
     });
 
     win.addEventListener("resize", () => {
-      if (win.innerWidth > 820) {
+      if (win.innerWidth > 900) {
         closeNav();
       }
     });
@@ -99,7 +105,7 @@
         });
       },
       {
-        threshold: 0.16,
+        threshold: 0.14,
         rootMargin: "0px 0px -8% 0px"
       }
     );
@@ -107,115 +113,12 @@
     elements.forEach((element) => observer.observe(element));
   }
 
-  function initCounters() {
-    const counters = Array.from(doc.querySelectorAll("[data-counter]"));
-
-    if (!counters.length) {
-      return;
-    }
-
-    const animate = (node) => {
-      const target = Number.parseInt(node.getAttribute("data-counter") || "0", 10);
-
-      if (!Number.isFinite(target)) {
-        return;
-      }
-
-      if (prefersReducedMotion) {
-        node.textContent = String(target);
-        return;
-      }
-
-      const duration = 1100;
-      const startTime = performance.now();
-
-      const tick = (time) => {
-        const progress = Math.min((time - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        node.textContent = String(Math.round(target * eased));
-
-        if (progress < 1) {
-          win.requestAnimationFrame(tick);
-        } else {
-          node.textContent = String(target);
-        }
-      };
-
-      win.requestAnimationFrame(tick);
-    };
-
-    if (!("IntersectionObserver" in win) || prefersReducedMotion) {
-      counters.forEach(animate);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          animate(entry.target);
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.6
-      }
-    );
-
-    counters.forEach((node) => observer.observe(node));
-  }
-
-  function initFaq() {
-    const items = Array.from(doc.querySelectorAll(".faq-item"));
-
-    if (!items.length) {
-      return;
-    }
-
-    items.forEach((item) => {
-      const button = item.querySelector(".faq-question");
-      const answer = item.querySelector(".faq-answer");
-
-      if (!button || !answer) {
-        return;
-      }
-
-      button.addEventListener("click", () => {
-        const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-        items.forEach((otherItem) => {
-          const otherButton = otherItem.querySelector(".faq-question");
-          const otherAnswer = otherItem.querySelector(".faq-answer");
-
-          if (!otherButton || !otherAnswer || otherButton === button) {
-            return;
-          }
-
-          otherButton.setAttribute("aria-expanded", "false");
-          otherAnswer.hidden = true;
-        });
-
-        button.setAttribute("aria-expanded", isExpanded ? "false" : "true");
-        answer.hidden = isExpanded;
-      });
-    });
-  }
-
   function getFields(form) {
     return Array.from(form.querySelectorAll("[data-required], [data-optional-validate]"));
   }
 
   function getFieldHelp(field) {
-    const wrapper = field.closest(".field");
-
-    if (!wrapper) {
-      return null;
-    }
-
-    return wrapper.querySelector("small");
+    return field.closest(".field")?.querySelector("small") || null;
   }
 
   function getValue(field) {
@@ -246,10 +149,14 @@
       if (!emailPattern.test(value)) {
         message = "Indiquez une adresse e-mail valide.";
       }
-    } else if (value && field.type === "tel" && value.replace(/[^\d+]/g, "").length < 6) {
-      message = "Indiquez un numéro de téléphone valide.";
-    } else if (value && field.tagName === "TEXTAREA" && value.length < 24) {
-      message = "Ajoutez un peu plus de contexte pour bien cadrer la demande.";
+    } else if (value && field.type === "tel") {
+      const digits = value.replace(/[^\d+]/g, "");
+
+      if (digits.length < 6) {
+        message = "Indiquez un numéro de téléphone valide.";
+      }
+    } else if (value && field.tagName === "TEXTAREA" && value.length < 20) {
+      message = "Ajoutez un peu plus de contexte pour bien comprendre votre demande.";
     }
 
     if (message || forceMessage || field.dataset.touched === "true") {
@@ -259,91 +166,110 @@
     return !message;
   }
 
-  function initForms() {
-    const forms = Array.from(doc.querySelectorAll("[data-form]"));
+  function buildMailtoLink(form) {
+    const data = new FormData(form);
+    const lastName = String(data.get("nom") || "").trim();
+    const firstName = String(data.get("prenom") || "").trim();
+    const company = String(data.get("societe") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const phone = String(data.get("telephone") || "").trim();
+    const projectType = String(data.get("type_projet") || "").trim();
+    const request = String(data.get("demande") || "").trim();
 
-    if (!forms.length) {
+    const sender = [firstName, lastName].filter(Boolean).join(" ");
+    const subjectParts = ["Demande de devis - 25 Lab."];
+
+    if (projectType) {
+      subjectParts.push(projectType);
+    }
+
+    const bodyLines = [
+      "Bonjour 25 Lab.,",
+      "",
+      "Je vous contacte pour une demande de devis.",
+      "",
+      `Nom : ${lastName || "-"}`,
+      `Prénom : ${firstName || "-"}`,
+      `Société : ${company || "-"}`,
+      `E-mail : ${email || "-"}`,
+      `Téléphone : ${phone || "-"}`,
+      `Type de projet : ${projectType || "-"}`,
+      "",
+      "Demande :",
+      request || "-",
+      "",
+      `Expéditeur : ${sender || email || "Client"}`
+    ];
+
+    const action = form.getAttribute("action") || "mailto:contact@25lab.fr";
+    const separator = action.includes("?") ? "&" : "?";
+
+    return `${action}${separator}subject=${encodeURIComponent(subjectParts.join(" | "))}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+  }
+
+  function initMailtoForm() {
+    const form = doc.querySelector("[data-mailto-form]");
+
+    if (!form) {
       return;
     }
 
-    forms.forEach((form) => {
-      const fields = getFields(form);
-      const successMessage = form.parentElement?.querySelector(".success-message");
-      const submitButton = form.querySelector("button[type='submit']");
-      const initialLabel = submitButton ? submitButton.textContent : "";
+    const status = doc.querySelector("[data-form-status]");
+    const fields = getFields(form);
+
+    fields.forEach((field) => {
+      setFieldState(field, "");
+
+      const markTouched = () => {
+        field.dataset.touched = "true";
+      };
+
+      field.addEventListener("input", () => {
+        markTouched();
+        validateField(field, false);
+      });
+
+      field.addEventListener("blur", () => {
+        markTouched();
+        validateField(field, true);
+      });
+
+      field.addEventListener("change", () => {
+        markTouched();
+        validateField(field, true);
+      });
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let formIsValid = true;
 
       fields.forEach((field) => {
-        setFieldState(field, "");
-
-        const markTouched = () => {
-          field.dataset.touched = "true";
-        };
-
-        field.addEventListener("input", () => {
-          markTouched();
-          validateField(field, false);
-        });
-
-        field.addEventListener("blur", () => {
-          markTouched();
-          validateField(field, true);
-        });
-
-        field.addEventListener("change", () => {
-          markTouched();
-          validateField(field, true);
-        });
+        field.dataset.touched = "true";
+        formIsValid = validateField(field, true) && formIsValid;
       });
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
+      if (!formIsValid) {
+        const invalidField = fields.find((field) => field.getAttribute("aria-invalid") === "true");
 
-        if (successMessage) {
-          successMessage.classList.remove("is-visible");
+        if (invalidField) {
+          invalidField.focus({ preventScroll: false });
         }
 
-        let formIsValid = true;
-
-        fields.forEach((field) => {
-          field.dataset.touched = "true";
-          formIsValid = validateField(field, true) && formIsValid;
-        });
-
-        if (!formIsValid) {
-          const invalidField = fields.find((field) => field.getAttribute("aria-invalid") === "true");
-
-          if (invalidField) {
-            invalidField.focus({ preventScroll: false });
-          }
-
-          return;
+        if (status) {
+          status.textContent = "";
         }
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.setAttribute("aria-busy", "true");
-          submitButton.textContent = "Envoi en cours…";
-        }
+        return;
+      }
 
-        win.setTimeout(() => {
-          form.reset();
+      if (status) {
+        status.textContent =
+          "Votre messagerie va s'ouvrir avec votre demande préremplie. Si rien ne se passe, écrivez à contact@25lab.fr.";
+      }
 
-          fields.forEach((field) => {
-            delete field.dataset.touched;
-            setFieldState(field, "");
-          });
-
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.removeAttribute("aria-busy");
-            submitButton.textContent = initialLabel;
-          }
-
-          if (successMessage) {
-            successMessage.classList.add("is-visible");
-          }
-        }, 420);
-      });
+      win.location.href = buildMailtoLink(form);
     });
   }
 
@@ -352,8 +278,6 @@
     initHeaderState();
     initNav();
     initRevealAnimations();
-    initCounters();
-    initFaq();
-    initForms();
+    initMailtoForm();
   });
 })();
