@@ -3,52 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Témoignages | Visibilité, crédibilité et accompagnement sérieux | 25 Lab.</title>
+    <title>Témoignages | Des sites plus clairs, plus visibles et plus crédibles | 25 Lab.</title>
     <meta
       name="description"
-      content="Découvrez les témoignages clients 25 Lab. sur la création de site internet, l'image professionnelle, la visibilité Google et l'accompagnement après livraison."
+      content="Découvrez des témoignages crédibles sur la création site web, la refonte site internet, l'image professionnelle, la visibilité locale et l'optimisation SEO avec 25 Lab."
     />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#171821" />
     <link rel="canonical" href="https://25lab.fr/temoignages.html" />
-    <meta name="theme-color" content="#17181d" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="25 Lab." />
-    <meta property="og:title" content="Témoignages | Visibilité, crédibilité et accompagnement sérieux" />
-    <meta
-      property="og:description"
-      content="Des retours crédibles de Genève, Annecy, Lausanne, Lyon, Paris, Bruxelles et Londres sur la clarté du site, la présence en ligne et le suivi."
-    />
-    <meta property="og:url" content="https://25lab.fr/temoignages.html" />
-    <meta property="og:image" content="https://25lab.fr/og-image.svg" />
-    <meta property="og:image:alt" content="25 Lab. — témoignages clients" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Témoignages | Visibilité, crédibilité et accompagnement sérieux" />
-    <meta
-      name="twitter:description"
-      content="Des retours concrets sur l'impact d'un site plus clair, plus crédible et mieux structuré."
-    />
-    <meta name="twitter:image" content="https://25lab.fr/og-image.svg" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
       rel="stylesheet"
     />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="25 Lab." />
+    <meta
+      property="og:title"
+      content="Témoignages | Des sites plus clairs, plus visibles et plus crédibles"
+    />
+    <meta
+      property="og:description"
+      content="Des retours concrets sur la visibilité en ligne, les demandes de devis et l'image professionnelle après une création ou une refonte."
+    />
+    <meta property="og:url" content="https://25lab.fr/temoignages.html" />
+    <meta property="og:image" content="https://25lab.fr/og-image.svg" />
+    <meta property="og:image:alt" content="Des témoignages clients pour 25 Lab." />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Témoignages | Des sites plus clairs, plus visibles et plus crédibles"
+    />
+    <meta
+      name="twitter:description"
+      content="Des témoignages professionnels, réalistes et utiles sur l'impact d'un site mieux pensé."
+    />
+    <meta name="twitter:image" content="https://25lab.fr/og-image.svg" />
+    <meta name="twitter:image:alt" content="Des témoignages clients pour 25 Lab." />
     <link rel="stylesheet" href="style.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "WebPage",
-            "name": "Témoignages",
+            "@type": "ProfessionalService",
+            "@id": "https://25lab.fr/#agency",
+            "name": "25 Lab.",
+            "url": "https://25lab.fr/",
+            "logo": "https://25lab.fr/logo.svg"
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://25lab.fr/temoignages.html#webpage",
             "url": "https://25lab.fr/temoignages.html",
-            "description": "Retours clients sur la création de site internet, la visibilité, la crédibilité et l'accompagnement 25 Lab."
+            "name": "Témoignages",
+            "description": "Retours clients sur l'amélioration de la visibilité en ligne, du référencement naturel et de la clarté commerciale grâce à 25 Lab.",
+            "isPartOf": {
+              "@id": "https://25lab.fr/#website"
+            },
+            "about": {
+              "@id": "https://25lab.fr/#agency"
+            },
+            "inLanguage": "fr-FR"
           },
           {
             "@type": "BreadcrumbList",
+            "@id": "https://25lab.fr/temoignages.html#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -72,11 +101,17 @@
     <a class="skip-link" href="#main-content">Aller au contenu</a>
 
     <header class="site-header">
-      <div class="container nav-bar">
-        <a class="brand" href="index.html" aria-label="25 Lab. — Retour à l'accueil">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="25 Lab. - Retour à l'accueil">
           <img src="logo.svg" alt="25 Lab." width="430" height="100" />
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Ouvrir le menu"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -87,89 +122,108 @@
           <a class="is-active" aria-current="page" href="temoignages.html">Témoignages</a>
           <a href="devis.html">Devis</a>
           <a href="contact.html">Contact</a>
-          <div class="nav-utilities" role="group" aria-label="Actions rapides">
-            <a class="nav-utility-link" href="devis.html#audit-gratuit">Audit gratuit</a>
-            <a class="nav-utility-link" href="devis.html#formulaire-devis">Devis gratuit</a>
-          </div>
+          <a class="btn btn-primary btn-small nav-cta" href="devis.html">Demander un devis</a>
         </nav>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="section page-hero">
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
+      <section class="page-hero">
+        <div class="container page-hero-grid">
+          <div class="page-hero-copy reveal">
             <p class="eyebrow">Témoignages</p>
-            <h1>Des retours qui parlent de clarté, de crédibilité et d'accompagnement, pas de promesses creuses.</h1>
-            <p class="lede">
-              Les témoignages les plus utiles sont ceux qui montrent ce qui change vraiment après une
-              refonte ou une création de site : une image plus professionnelle, une offre mieux
-              comprise, une visibilité plus propre et des prises de contact plus simples.
+            <h1>Des retours crédibles, concrets et alignés avec des besoins réels.</h1>
+            <p class="lead">
+              Les meilleurs témoignages ne parlent pas de promesses vagues. Ils montrent ce qu'un site plus clair, une image plus professionnelle et une meilleure structure changent dans le quotidien d'une activité.
             </p>
           </div>
-          <aside class="page-hero-card reveal delay-1">
-            <p class="eyebrow">Ce qu'ils retiennent</p>
-            <ul>
-              <li>Un site plus cohérent avec le niveau réel de leur activité.</li>
-              <li>Une meilleure lisibilité de l'offre et des demandes plus claires.</li>
-              <li>Un accompagnement sérieux avant, pendant et après la mise en ligne.</li>
-            </ul>
+          <aside class="hero-panel hero-panel-compact reveal">
+            <p class="panel-label">Ce qui revient le plus</p>
+            <h2>Plus de clarté avant le premier contact.</h2>
+            <p>
+              Quand les informations sont mieux organisées et le message plus net, les demandes sont souvent plus précises, plus utiles et plus simples à traiter.
+            </p>
           </aside>
         </div>
       </section>
 
       <section class="section">
-        <div class="container">
-          <div class="stat-grid">
-            <article class="stat-card tone-pink reveal">
-              <strong><span data-counter="7">7</span> villes</strong>
-              <em>Genève, Annecy, Lausanne, Lyon, Paris, Bruxelles, Londres</em>
-              <p>Des activités différentes, mais un même besoin : être plus claires et plus crédibles en ligne.</p>
-            </article>
-            <article class="stat-card tone-blue reveal delay-1">
-              <strong><span data-counter="3">3</span> bénéfices</strong>
-              <em>Clarté, confiance, présence en ligne</em>
-              <p>Ce sont les points qui reviennent le plus dans les retours après livraison.</p>
-            </article>
-            <article class="stat-card tone-green reveal">
-              <strong><span data-counter="1">1</span> ligne directrice</strong>
-              <em>Rendre l'offre plus facile à comprendre</em>
-              <p>Un site plus beau ne suffit pas : il doit surtout être plus utile commercialement.</p>
-            </article>
-          </div>
+        <div class="container testimonial-grid">
+          <article class="testimonial-card tone-pink reveal">
+            <p class="testimonial-meta">Stéphane, artisan plombier dans l'Oise</p>
+            <blockquote>
+              Avant la refonte de mon site, je recevais surtout des appels peu qualifiés et mon activité était difficile à présenter clairement. 25 Lab. a restructuré mon site, clarifié mes services et ajouté un formulaire de demande de devis plus simple. Depuis, je reçois davantage de demandes précises et je peux mieux organiser mes interventions.
+            </blockquote>
+            <ul class="tag-list">
+              <li>Demandes de devis plus précises</li>
+              <li>Site plus clair</li>
+            </ul>
+          </article>
+
+          <article class="testimonial-card tone-lilac reveal">
+            <p class="testimonial-meta">Mélanie, esthéticienne indépendante à Compiègne</p>
+            <blockquote>
+              Mon ancien site n'expliquait pas bien mes prestations et mes clientes me posaient souvent les mêmes questions avant de réserver. 25 Lab. a revu la structure, le ton et la présentation de mes soins. Aujourd'hui, mes services sont mieux compris et les prises de contact sont plus simples à gérer.
+            </blockquote>
+            <ul class="tag-list">
+              <li>Image plus professionnelle</li>
+              <li>Clients mieux informés</li>
+            </ul>
+          </article>
+
+          <article class="testimonial-card tone-yellow reveal">
+            <p class="testimonial-meta">Karim, gérant d'un restaurant local à Senlis</p>
+            <blockquote>
+              Nous avions besoin d'un site plus propre pour présenter la carte, les horaires et les privatisations. La nouvelle version est beaucoup plus lisible sur mobile et nos informations sont enfin faciles à trouver. Nous avons aussi gagné en visibilité locale sur certaines recherches autour du restaurant.
+            </blockquote>
+            <ul class="tag-list">
+              <li>Meilleure visibilité locale</li>
+              <li>Lecture mobile plus fluide</li>
+            </ul>
+          </article>
+
+          <article class="testimonial-card tone-orange reveal">
+            <p class="testimonial-meta">Claire, consultante RH à Lille</p>
+            <blockquote>
+              J'avais besoin d'un site simple mais sérieux pour présenter mon accompagnement sans multiplier les pages inutiles. 25 Lab. a clarifié mon offre, retravaillé mes textes et posé une image plus cohérente avec mon positionnement. Les prospects comprennent mieux mon rôle avant le premier échange.
+            </blockquote>
+            <ul class="tag-list">
+              <li>Offre mieux comprise</li>
+              <li>Premier contact mieux cadré</li>
+            </ul>
+          </article>
+
+          <article class="testimonial-card tone-green reveal">
+            <p class="testimonial-meta">Sarah, fondatrice d'une boutique en ligne de décoration à Nantes</p>
+            <blockquote>
+              Mon site vendait, mais il manquait de cohérence visuelle et certaines pages n'étaient pas assez rassurantes. 25 Lab. a retravaillé la présentation de la boutique, harmonisé l'identité et amélioré plusieurs éléments de lisibilité. Le site paraît plus abouti et mon référencement naturel progresse sur des recherches ciblées.
+            </blockquote>
+            <ul class="tag-list">
+              <li>Image plus cohérente</li>
+              <li>Meilleur référencement naturel</li>
+            </ul>
+          </article>
         </div>
       </section>
 
       <section class="section section-soft">
         <div class="container">
-          <div class="quote-grid">
-            <article class="quote-card tone-pink reveal">
-              <h3>Genève</h3>
-              <p>« Le nouveau site nous aide à mieux expliquer nos prestations. Les demandes de devis sont plus claires et l'activité paraît beaucoup plus structurée. »</p>
+          <div class="section-intro reveal">
+            <p class="eyebrow">Résultats observés</p>
+            <h2>Des améliorations concrètes, sans discours exagéré.</h2>
+          </div>
+          <div class="card-grid card-grid-3">
+            <article class="info-card tone-lilac reveal">
+              <h3>Plus de demandes utiles</h3>
+              <p>Le site prépare mieux le terrain avant le premier échange et filtre davantage les demandes imprécises.</p>
             </article>
-            <article class="quote-card tone-blue reveal delay-1">
-              <h3>Annecy</h3>
-              <p>« Nous avions besoin d'un site plus lisible pour rassurer les clients avant l'appel. Aujourd'hui, les informations essentielles se trouvent beaucoup plus vite. »</p>
+            <article class="info-card tone-yellow reveal">
+              <h3>Une image plus rassurante</h3>
+              <p>La cohérence visuelle et la clarté du message renforcent la confiance dès les premières secondes.</p>
             </article>
-            <article class="quote-card tone-green reveal">
-              <h3>Lausanne</h3>
-              <p>« Le site est plus propre, plus simple à présenter et plus cohérent avec notre offre. Cela nous aide vraiment à paraître plus sérieux en ligne. »</p>
-            </article>
-            <article class="quote-card tone-orange reveal delay-1">
-              <h3>Lyon</h3>
-              <p>« Le travail sur les textes et la structure nous a aidés à mieux présenter nos services. Les prospects comprennent plus vite ce que nous faisons. »</p>
-            </article>
-            <article class="quote-card tone-yellow reveal">
-              <h3>Paris</h3>
-              <p>« Nous voulions une vitrine digitale élégante sans effet inutile. Le résultat est plus premium et plus simple à partager avec de nouveaux clients. »</p>
-            </article>
-            <article class="quote-card tone-lilac reveal delay-1">
-              <h3>Bruxelles</h3>
-              <p>« La fiche Google et le site racontent enfin la même chose. C'est plus cohérent et on se sent mieux représentés dans les recherches locales. »</p>
-            </article>
-            <article class="quote-card tone-blue reveal">
-              <h3>Londres</h3>
-              <p>« L'accompagnement est clair et sans jargon. On sait ce qui est prioritaire, ce qui peut attendre et comment continuer à faire progresser le site. »</p>
+            <article class="info-card tone-green reveal">
+              <h3>Une activité mieux comprise</h3>
+              <p>Les visiteurs trouvent plus vite les bonnes informations et arrivent mieux préparés au contact.</p>
             </article>
           </div>
         </div>
@@ -177,69 +231,18 @@
 
       <section class="section">
         <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Études de perception</p>
-            <h2>Ce que les clients remarquent en premier après la mise en ligne.</h2>
-          </div>
-          <div class="case-grid">
-            <article class="case-card tone-pink reveal">
-              <h3>Image plus sérieuse</h3>
-              <p>Le site donne tout de suite une impression plus professionnelle, plus stable et plus rassurante.</p>
-            </article>
-            <article class="case-card tone-blue reveal delay-1">
-              <h3>Offre plus compréhensible</h3>
-              <p>Le visiteur comprend plus vite les services, les bénéfices et le bon moment pour vous contacter.</p>
-            </article>
-            <article class="case-card tone-green reveal">
-              <h3>Demandes mieux cadrées</h3>
-              <p>Les prises de contact sont souvent plus utiles, car le site prépare mieux le terrain avant l'échange.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-deep">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Pourquoi ils nous recommandent</p>
-            <h2>Un design élégant compte. Une structure utile compte encore plus.</h2>
-          </div>
-          <div class="method-grid">
-            <article class="method-card tone-pink reveal">
-              <strong>01</strong>
-              <h3>Clarté</h3>
-              <p>Le message devient plus simple à lire et plus facile à retenir.</p>
-            </article>
-            <article class="method-card tone-blue reveal delay-1">
-              <strong>02</strong>
-              <h3>Crédibilité</h3>
-              <p>L'image renvoyée par le site est plus en phase avec la qualité de l'activité.</p>
-            </article>
-            <article class="method-card tone-green reveal">
-              <strong>03</strong>
-              <h3>Visibilité</h3>
-              <p>Le lien entre le site, Google et la présence locale devient plus cohérent.</p>
-            </article>
-            <article class="method-card tone-lilac reveal delay-1">
-              <strong>04</strong>
-              <h3>Suivi</h3>
-              <p>Le projet ne s'arrête pas à la livraison. Il continue à progresser proprement.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container cta-banner reveal">
-          <p class="eyebrow">Votre tour</p>
-          <h2>Si votre activité mérite un site plus clair, plus convaincant et plus crédible, la suite peut être très simple.</h2>
-          <p>
-            Demandez un audit gratuit, un devis ou un premier échange. Nous verrons ce qu'il faut
-            clarifier, renforcer ou reconstruire pour améliorer votre présence en ligne.
-          </p>
-          <div class="button-row">
-            <a class="btn btn-primary" href="devis.html">Demander un audit gratuit</a>
-            <a class="btn btn-secondary" href="contact.html">Parler de mon projet</a>
+          <div class="cta-banner reveal">
+            <div>
+              <p class="eyebrow">Votre projet</p>
+              <h2>Si votre site doit gagner en clarté, nous pouvons l'étudier ensemble.</h2>
+              <p>
+                Que vous partiez de zéro ou d'un site existant, l'objectif reste le même : construire une présence en ligne plus claire, plus crédible et plus utile.
+              </p>
+            </div>
+            <div class="button-row">
+              <a class="btn btn-primary" href="devis.html">Demander un devis</a>
+              <a class="btn btn-secondary" href="creations.html">Voir les solutions</a>
+            </div>
           </div>
         </div>
       </section>
@@ -248,19 +251,12 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="25 Lab. — Retour à l'accueil">
+          <a class="brand brand-footer" href="index.html" aria-label="25 Lab. - Retour à l'accueil">
             <img src="logo-light.svg" alt="25 Lab." width="430" height="100" />
           </a>
           <p>
-            25 Lab. crée des sites web premium pour améliorer la présence en ligne, travailler la
-            crédibilité et convertir plus proprement les visiteurs en clients.
+            25 Lab. crée des sites internet professionnels et des identités visuelles cohérentes pour renforcer la visibilité en ligne, la crédibilité et la prise de contact.
           </p>
-          <p>Europe, Suisse, France, UK, accompagnement à distance.</p>
-          <!-- Remplacez ces liens par vos vraies URLs Instagram et WhatsApp avant publication. -->
-          <div class="footer-socials">
-            <a href="https://wa.me/000000000000" target="_blank" rel="noreferrer">WhatsApp</a>
-            <a href="https://www.instagram.com/25lab" target="_blank" rel="noreferrer">Instagram</a>
-          </div>
         </div>
         <div class="footer-column">
           <p class="footer-title">Navigation</p>
@@ -271,25 +267,24 @@
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-column">
-          <p class="footer-title">Services</p>
-          <a href="creations.html#one-page">Site one page</a>
+          <p class="footer-title">Solutions</p>
+          <a href="creations.html#site-one-page">Site one page</a>
           <a href="creations.html#site-vitrine">Site vitrine</a>
-          <a href="creations.html#e-commerce">Site e-commerce</a>
-          <a href="creations.html#seo">Référencement SEO</a>
-          <a href="creations.html#maintenance">Maintenance</a>
+          <a href="creations.html#site-e-commerce">Site e-commerce</a>
+          <a href="creations.html#optimisation-maintenance">Optimisation / maintenance</a>
+          <a href="creations.html#logo-brand-identity">Logo &amp; brand identity</a>
         </div>
         <div class="footer-column">
           <p class="footer-title">Contact</p>
-          <!-- Remplacez cette adresse e-mail avant la mise en ligne. -->
           <a href="mailto:contact@25lab.fr">contact@25lab.fr</a>
-          <a href="devis.html">Demander un audit gratuit</a>
-          <a href="contact.html">Parler de votre projet</a>
-          <span>Des sites plus clairs, plus crédibles et mieux pensés pour la conversion.</span>
+          <a href="https://wa.me/330000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="devis.html">Demander un devis</a>
         </div>
       </div>
       <div class="container footer-bottom">
         <p>&copy; <span data-current-year></span> 25 Lab. Tous droits réservés.</p>
-        <p>Des témoignages qui parlent de perception, de clarté et de confiance.</p>
+        <p>Un site pensé par vous, pour vous, avec une vraie stratégie de visibilité.</p>
       </div>
     </footer>
 
